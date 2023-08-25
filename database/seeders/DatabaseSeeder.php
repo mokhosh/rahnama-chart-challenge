@@ -26,19 +26,19 @@ class DatabaseSeeder extends Seeder
 
         // create 4 fields and associate with groups
         $firstField = $firstGroup->fields()->create(
-            ['title' => 'firstField'],
+            ['title' => 'first field'],
             ['competition_id' => $competition->id],
         );
         $secondField = $firstGroup->fields()->create(
-            ['title' => 'secondField'],
+            ['title' => 'second field'],
             ['competition_id' => $competition->id],
         );
         $thirdField = $secondGroup->fields()->create(
-            ['title' => '$thirdField'],
+            ['title' => '$third field'],
             ['competition_id' => $competition->id],
         );
         $fourthField = $secondGroup->fields()->create(
-            ['title' => 'fourthField'],
+            ['title' => 'fourth field'],
             ['competition_id' => $competition->id],
         );
 
