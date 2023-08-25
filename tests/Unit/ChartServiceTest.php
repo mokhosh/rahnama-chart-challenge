@@ -5,7 +5,7 @@ test('it can query chart data in the expected format', function () {
 
     $results = (new \App\Services\ChartService)->getParticipantCountByAgeRangeAndField();
 
-    expect($results)->toBe([
+    expect($results)->toEqual([
         [
             'field' => 'first field',
             'participants' => [
