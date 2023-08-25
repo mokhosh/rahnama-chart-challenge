@@ -13,4 +13,24 @@ class Field extends Model
     {
         return $this->belongsToMany(AgeRange::class, 'challenges', null, 'age_id');
     }
+
+    public function participants()
+    {
+        return $this->hasMany(Participant::class)->whereDoesntHave('examiner');
+    }
+
+    public function examiners()
+    {
+        return $this->hasMany(Participant::class)->whereHas('examiner');
+    }
+
+    public function participantsByAgeGroup()
+    {
+        return $this->participants->toArray();
+    }
+
+    public function examinersByAgeGroup()
+    {
+        return $this->examiners->toArray();
+    }
 }

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Participant extends Model
 {
     use HasFactory;
+
+    public function examiner()
+    {
+        return $this->hasOne(Examiner::class);
+    }
 }
