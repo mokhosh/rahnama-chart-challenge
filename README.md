@@ -24,3 +24,17 @@ What's the relationship of the models?
 - Challenge belongs to an Age Group
 - Challenge has many Participants
 - Some participants have one Examiner profile which means they have taken the exam
+
+## How would the query look like
+```
+competition
+->groups
+->fields
+->challenges grouped by age_range
+->examiner participants and non examiner participants count
+
+competition
+->age_ranges
+->challenges grouped by field
+->examiner participants and non examiner participants count
+```
