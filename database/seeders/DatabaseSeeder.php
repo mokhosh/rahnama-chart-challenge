@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
             ['competition_id' => $competition->id],
         );
         $thirdField = $secondGroup->fields()->create(
-            ['title' => '$third field'],
+            ['title' => 'third field'],
             ['competition_id' => $competition->id],
         );
         $fourthField = $secondGroup->fields()->create(
