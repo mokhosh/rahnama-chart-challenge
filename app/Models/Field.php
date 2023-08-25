@@ -23,14 +23,4 @@ class Field extends Model
     {
         return $this->hasMany(Participant::class)->whereHas('examiner');
     }
-
-    public function participantsByAgeGroup()
-    {
-        return $this->participants->toArray();
-    }
-
-    public function examinersByAgeGroup()
-    {
-        return $this->examiners->toArray();
-    }
 }
