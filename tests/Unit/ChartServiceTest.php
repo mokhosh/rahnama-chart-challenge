@@ -13,8 +13,9 @@ test('it can group field participants by age group', function () {
 
 test('it can query chart data in the expected format', function () {
     $this->seed();
+    $competition = \App\Models\Competition::first();
 
-    $results = (new \App\Services\ChartService)->getParticipantCountByAgeRangeAndField();
+    $results = (new \App\Services\ChartService)->getParticipantCountByAgeRangeAndField($competition);
 
     expect($results)->toEqual([
         [

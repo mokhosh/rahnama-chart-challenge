@@ -2,13 +2,16 @@
 
 namespace App\Services;
 
+use App\Models\Competition;
 use App\Models\Field;
 
 class ChartService
 {
-    public function getParticipantCountByAgeRangeAndField(): array
+    public function getParticipantCountByAgeRangeAndField(Competition $competition): array
     {
-        return Field::get()
+        return Field::query()
+            ->whereHas('groups', fn($query) => $query->whereIn('groups.id', $competition->groups()->pluck('id')))
+            ->get()
             ->map(function ($field) {
                 return [
                     'field' => $field->title,

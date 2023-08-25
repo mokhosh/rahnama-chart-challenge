@@ -9,6 +9,11 @@ class Field extends Model
 {
     use HasFactory;
 
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class)->withPivot('competition_id');
+    }
+
     public function age_ranges()
     {
         return $this->belongsToMany(AgeRange::class, 'challenges', null, 'age_id');
