@@ -13,4 +13,9 @@ class Participant extends Model
     {
         return $this->hasOne(Examiner::class);
     }
+
+    public function challenge()
+    {
+        return $this->belongsTo(Challenge::class);
+    }
 }
